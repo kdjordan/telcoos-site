@@ -8,17 +8,15 @@ import {
   Cpu,
   ArrowRight,
   Check,
-  Download,
-  ChevronRight,
   Sparkles,
   FolderOpen,
   BarChart3,
   Globe,
   Layers,
-  MonitorSmartphone,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { DownloadSection } from "@/components/DownloadSection";
+import { EarlyAccessSection } from "@/components/EarlyAccessSection";
+import { HeroCTA } from "@/components/HeroCTA";
 
 export default function Home() {
   return (
@@ -43,12 +41,14 @@ export default function Home() {
             <a href="#features" className="text-sm text-zinc-400 hover:text-white transition-colors">Features</a>
             <a href="#ai" className="text-sm text-zinc-400 hover:text-white transition-colors">AI Assistant</a>
             <a href="#enterprise" className="text-sm text-zinc-400 hover:text-white transition-colors">Enterprise</a>
-            <a href="#download" className="text-sm text-zinc-400 hover:text-white transition-colors">Download</a>
+            <a href="#early-access" className="text-sm text-zinc-400 hover:text-white transition-colors">Early Access</a>
           </div>
-          <Button className="bg-teal-600 hover:bg-teal-500 text-white border-0">
-            Get Started
-            <ArrowRight className="w-4 h-4 ml-1" />
-          </Button>
+          <a href="#early-access">
+            <Button className="bg-teal-600 hover:bg-teal-500 text-white border-0">
+              Request Access
+              <ArrowRight className="w-4 h-4 ml-1" />
+            </Button>
+          </a>
         </div>
       </nav>
 
@@ -78,33 +78,8 @@ export default function Home() {
               intelligent interface.
             </p>
 
-            {/* CTA buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up delay-300" style={{ opacity: 0 }}>
-              <Button className="h-12 px-8 bg-teal-600 hover:bg-teal-500 text-white border-0 text-base font-medium glow-teal">
-                <Download className="w-5 h-5 mr-2" />
-                Download for macOS
-              </Button>
-              <Button variant="outline" className="h-12 px-8 text-base font-medium border-zinc-700 hover:border-zinc-600 hover:bg-zinc-800/50">
-                View Documentation
-                <ChevronRight className="w-4 h-4 ml-1" />
-              </Button>
-            </div>
-
-            {/* Platform badges */}
-            <div className="flex items-center justify-center gap-6 mt-8 text-sm text-zinc-500 animate-fade-in delay-500" style={{ opacity: 0 }}>
-              <span className="flex items-center gap-2">
-                <MonitorSmartphone className="w-4 h-4" />
-                macOS
-              </span>
-              <span className="flex items-center gap-2">
-                <MonitorSmartphone className="w-4 h-4" />
-                Windows
-              </span>
-              <span className="flex items-center gap-2">
-                <MonitorSmartphone className="w-4 h-4" />
-                Linux
-              </span>
-            </div>
+            {/* CTA buttons and beta status */}
+            <HeroCTA />
           </div>
 
           {/* Hero visual - App mockup */}
@@ -493,8 +468,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Download Section */}
-      <DownloadSection />
+      {/* Early Access Section */}
+      <EarlyAccessSection />
 
       {/* Footer */}
       <footer className="py-12 px-6 border-t border-white/5">
@@ -509,7 +484,7 @@ export default function Home() {
 
             <div className="flex items-center gap-8 text-sm text-zinc-500">
               <a href="#" className="hover:text-white transition-colors">Documentation</a>
-              <a href="#" className="hover:text-white transition-colors">Support</a>
+              <a href="mailto:kevin@telcoos.io" className="hover:text-white transition-colors">Support</a>
               <a href="#" className="hover:text-white transition-colors">Privacy</a>
               <a href="#" className="hover:text-white transition-colors">Terms</a>
             </div>
