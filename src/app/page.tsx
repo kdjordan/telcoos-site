@@ -18,6 +18,7 @@ import {
   MonitorSmartphone,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { DownloadSection } from "@/components/DownloadSection";
 
 export default function Home() {
   return (
@@ -493,45 +494,7 @@ export default function Home() {
       </section>
 
       {/* Download Section */}
-      <section id="download" className="py-24 px-6 border-t border-white/5">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">
-            Ready to unify your operations?
-          </h2>
-          <p className="text-xl text-zinc-400 mb-12">
-            Download TelcoOS for your platform and start consolidating your workflow today.
-          </p>
-
-          <div className="grid sm:grid-cols-3 gap-4 mb-12">
-            {[
-              { platform: "macOS", arch: "Apple Silicon & Intel", primary: true },
-              { platform: "Windows", arch: "64-bit", primary: false },
-              { platform: "Linux", arch: "AppImage & DEB", primary: false },
-            ].map((item, i) => (
-              <button
-                key={i}
-                className={`platform-btn p-6 rounded-xl border transition-all ${
-                  item.primary
-                    ? "bg-teal-600/20 border-teal-500/30 hover:border-teal-500/50"
-                    : "bg-zinc-900/50 border-white/5 hover:border-white/10"
-                }`}
-              >
-                <div className="flex items-center justify-center gap-3 mb-2">
-                  <Download className={`w-5 h-5 ${item.primary ? "text-teal-400" : "text-zinc-400"}`} />
-                  <span className={`font-semibold ${item.primary ? "text-teal-400" : "text-white"}`}>
-                    {item.platform}
-                  </span>
-                </div>
-                <span className="text-xs text-zinc-500">{item.arch}</span>
-              </button>
-            ))}
-          </div>
-
-          <p className="text-sm text-zinc-500">
-            Version 1.0.0 • Requires macOS 12+, Windows 10+, or Ubuntu 20.04+
-          </p>
-        </div>
-      </section>
+      <DownloadSection />
 
       {/* Footer */}
       <footer className="py-12 px-6 border-t border-white/5">
