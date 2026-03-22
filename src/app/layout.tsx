@@ -15,9 +15,61 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TelcoOS - Unified Telecom Operations",
-  description: "One App. Every Carrier. Total Control. The AI-powered desktop application that unifies telecom carrier operations into a single intelligent interface.",
-  keywords: ["telecom", "carrier management", "rate decks", "VoIP", "operations", "AI"],
+  metadataBase: new URL("https://telcoos.io"),
+  title: {
+    default: "TelcoOS - Unified Telecom Operations",
+    template: "%s | TelcoOS",
+  },
+  description:
+    "One App. Every Carrier. Total Control. The AI-powered desktop application that unifies telecom carrier operations into a single intelligent interface.",
+  keywords: [
+    "telecom",
+    "carrier management",
+    "rate decks",
+    "VoIP",
+    "operations",
+    "AI",
+    "Claude",
+    "telecom software",
+    "carrier operations",
+    "rate analysis",
+    "deal pipeline",
+    "telecom AI",
+  ],
+  authors: [{ name: "TelcoOS" }],
+  creator: "TelcoOS",
+  publisher: "TelcoOS",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://telcoos.io",
+    siteName: "TelcoOS",
+    title: "TelcoOS - Unified Telecom Operations",
+    description:
+      "One App. Every Carrier. Total Control. The AI-powered desktop application that unifies telecom carrier operations into a single intelligent interface.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TelcoOS - Unified Telecom Operations",
+    description:
+      "One App. Every Carrier. Total Control. AI-powered desktop app for unified telecom operations.",
+    creator: "@telcoos",
+  },
+  alternates: {
+    canonical: "https://telcoos.io",
+  },
+  category: "technology",
 };
 
 export default function RootLayout({
@@ -30,7 +82,15 @@ export default function RootLayout({
       lang="en"
       className={`${outfit.variable} ${jetbrainsMono.variable} h-full antialiased dark`}
     >
-      <body className="min-h-full flex flex-col bg-[#0a0a0b] text-zinc-100">{children}</body>
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#0a0a0b" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      </head>
+      <body className="min-h-full flex flex-col bg-[#0a0a0b] text-zinc-100">
+        {children}
+      </body>
     </html>
   );
 }
