@@ -58,6 +58,14 @@ export const metadata: Metadata = {
     title: "TelcoOS - Unified Telecom Operations",
     description:
       "One App. Every Carrier. Total Control. The AI-powered desktop application that unifies telecom carrier operations into a single intelligent interface.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "TelcoOS - One App. Every Carrier. Total Control.",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -65,6 +73,7 @@ export const metadata: Metadata = {
     description:
       "One App. Every Carrier. Total Control. AI-powered desktop app for unified telecom operations.",
     creator: "@telcoos",
+    images: ["/og-image.png"],
   },
   alternates: {
     canonical: "https://telcoos.io",
@@ -83,6 +92,10 @@ export default function RootLayout({
       className={`${outfit.variable} ${jetbrainsMono.variable} h-full antialiased dark`}
     >
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+        <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#0a0a0b" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
